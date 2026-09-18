@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f8fafc;
+  font-feature-settings: 'ss01' on, 'cv01' on;
+}
+
+.dark body {
+  background: #020617;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .mesh-bg {
+    background-color: #f8fafc;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.12) 0, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.1) 0, transparent 45%),
+      radial-gradient(at 50% 100%, rgba(236, 72, 153, 0.08) 0, transparent 50%);
+  }
+
+  .dark .mesh-bg {
+    background-color: #020617;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.18) 0, transparent 50%),
+      radial-gradient(at 100% 20%, rgba(59, 130, 246, 0.12) 0, transparent 45%),
+      radial-gradient(at 50% 100%, rgba(236, 72, 153, 0.1) 0, transparent 50%);
+  }
+
+  .glass-panel {
+    @apply border border-white/60 bg-white/70 shadow-xl backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/60;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-violet-600 via-fuchsia-500 to-indigo-600 bg-clip-text text-transparent dark:from-violet-400 dark:via-fuchsia-400 dark:to-indigo-400;
+  }
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+.card-lift {
+  @apply transition-all duration-300;
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.15);
+}
+
+.dark .card-lift:hover {
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.45);
+}
+
+@media print {
+  nav, footer, button, .no-print {
+    display: none !important;
+  }
+}

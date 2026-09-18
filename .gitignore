@@ -1,0 +1,45 @@
+# Sibling folders with their own git repos (exclude from this repo)
+Event-Management-website/
+EventManagemt System/
+
+# Node modules
+node_modules/
+**/node_modules/
+
+# Cache directories (includes MongoDB memory server binaries)
+.cache/
+**/.cache/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+.next/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime / temp files
+*.pdf
+temp-*.pdf
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Package lock (optional - remove if you want to track it)
+# package-lock.json
+

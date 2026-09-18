@@ -1,0 +1,17 @@
+{
+  "short_name": "Codesky",
+  "name": "Codesky Event Platform",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512 any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0f172a",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#0f172a",
+  "description": "Event management platform for seamless experiences."
+}
